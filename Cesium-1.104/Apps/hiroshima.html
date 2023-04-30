@@ -66,7 +66,7 @@
 
     var promise = Cesium.GeoJsonDataSource.load(hiroshima);
     var datasource = Cesium.DataSource(promise);
-      var viewer = new Cesium.Viewer("cesiumContainer");
+    const viewer = new Cesium.Viewer("cesiumContainer");
        });
       
    viewer.dataSources.add(datasource);
