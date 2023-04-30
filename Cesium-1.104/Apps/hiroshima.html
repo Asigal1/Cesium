@@ -65,12 +65,12 @@
     var hiroshima = '../Cesium-1.104/国土地理院技術資料 D1-No_939 平成30年7月豪雨に伴う崩壊地等分布図（ライン）_広島_線.geojson';
 
     var promise = Cesium.GeoJsonDataSource.load(hiroshima);
-    promise.then(function(datasource){
+    promise.then(function(promise){
       var viewer = new Cesium.Viewer("cesiumContainer");
        });
       
-   viewer.add(datasource);
-   viewer.zoomTo(datasource);
+   viewer.add(promise);
+   viewer.zoomTo(promise);
     </script>
   </body>
 </html>
