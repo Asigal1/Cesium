@@ -68,18 +68,9 @@
       var promise = Cesium.GeoJsonDataSource.load(Hiroshima);
       
      promise.then(function(datasorce)){
-      var vewer = new Cesium.Viewer('mapdiv', {
-        animation : false,
-        baseLayerPicker: false,
-        fullscreenButton: false,
-        geocoder: false,
-        homeButton: false,
-        navigationHelpButton: false,
-        sceneModePicker: false,
-        scene3DOnly: true,
-        timeline: false,
-                  });
-     
+      const viewer = new Cesium.Viewer("cesiumContainer");
+      var layers = viewer.scene.imageryLayers;
+      
     viewer.dataSources.add(datasource); 
     viewer.zoomTo(datasource);　//レイヤにズーム
     </script>
