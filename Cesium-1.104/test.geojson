@@ -1,15 +1,18 @@
-"features": [
+{
+    "type" : "FeatureCollection",
+    "features": [
   { "type": "Feature",
     "properties": { "name": "判読範囲",
                     "_color": "#000000",
                     "_weight" : 3
     },
     "geometry": { "type": "LineString",
-                  "coordinates": [ 132.425938, 33.511075]  } },
+                  "coordinates": [ 132.425938, 33.511075, 0.0]  } },
   { "type": "Feature",
     "properties": { "name": "判読範囲",
                     "_color": "red" },
     "geometry": { "type": "Point",
-                  "coordinates": [ 132.425873, 33.511218] } },
+                  "coordinates": [ 132.425873, 33.511218, 0.0] } },
 　　：]
+    }
 
