@@ -30,14 +30,12 @@
     <script>
       const viewer = new Cesium.Viewer("cesiumContainer");
       var point = viewer.entities.add({
-      name:"福井市", //レイヤ名
-      description:"ここは福井市です。",　//レイヤの説明
-        position : Cesium.Cartesian3.fromDegrees(136.223554,36.061957,0), //経度,緯度,高さ
-        point : {
-            pixelSize : 10, //ポイントのサイズ
-            color : Cesium.Color.BLUE //ポイントの色
-        }
-    });
+      viewer.dataSources.add(Cesium.GeoJsonDataSource.load('../Cesium/Cesium-1.104/国土地理院技術資料 D1-No_939 平成30年7月豪雨に伴う崩壊地等分布図（ライン）_広島_線.geojson', {
+      stroke: Cesium.Color.HOTPINK,
+      fill: Cesium.Color.PINK,
+      strokeWidth: 3,
+      markerSymbol: '?'
+      }));
       
       var polygon = viewer.entities.add({//領域を指定したポリゴンの追加
     name:"福井県庁",
@@ -62,15 +60,8 @@
         outlineColor : Cesium.Color.BLACK
     }
 });
-    var hiroshima = '../Cesium-1.104/国土地理院技術資料 D1-No_939 平成30年7月豪雨に伴う崩壊地等分布図（ライン）_広島_線.geojson';
-
-    var promise = Cesium.GeoJsonDataSource.load(hiroshima);
-    var datasource = Cesium.DataSource(promise);
-    const viewer = new Cesium.Viewer("cesiumContainer");
-       });
       
-   viewer.dataSources.add(datasource);
-   viewer.zoomTo(datasource);
+   viewer.zoomTo(point);
     </script>
   </body>
 </html>
