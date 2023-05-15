@@ -28,18 +28,11 @@
   <body>
     <div id="cesiumContainer"></div>
     <script>
-      const viewer = new Cesium.Viewer("cesiumContainer");
-
-    var point = viewer.dataSources.add(Cesium.loadjson('../Cesium/Cesium-1.104/test.json {
-    stroke: Cesium.Color.HOTPINK,
-    fill: Cesium.Color.PINK,
-    strokeWidth: 3,
-    markerSymbol: '?'
-    }));
-      
-
-      
-   viewer.zoomTo(viewer.dataSources);
+    const viewer = new Cesium.Viewer("cesiumContainer");
+    
+    const dataSource = Cesium.GeoJsonDataSource.load("../Cesium/Cesium-1.104/test.geojson");
+    viewer.dataSources.add(dataSource); 
+    viewer.zoomTo(viewer.dataSources);
     </script>
   </body>
 </html>
